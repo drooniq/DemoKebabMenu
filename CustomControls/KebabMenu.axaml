@@ -1,0 +1,51 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:DemoKebabMenu.CustomControls">
+    
+    <Style Selector="local|KebabMenu">
+        <Style.Resources>
+            <local:SizeToFontSizeConverter x:Key="SizeToFontSizeConverter"/>
+        </Style.Resources>        
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid>
+                    <Button x:Name="PART_KebabButton"
+                            Width="{TemplateBinding Size}"
+                            Height="{TemplateBinding Size}"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Background="#66000000"
+                            CornerRadius="{TemplateBinding CornerRadius}">
+                        <TextBlock Text="⋮"
+                                  FontSize="{Binding Size, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource SizeToFontSizeConverter}}"
+                                  HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"
+                                  Foreground="White"/>
+                    </Button>
+
+                    <Popup x:Name="PART_Popup"
+                           PlacementTarget="{Binding ElementName=PART_KebabButton}"
+                           Placement="LeftEdgeAlignedTop"
+                           IsLightDismissEnabled="True">
+                        <Border Background="#80000000"
+                                CornerRadius="4"
+                                Padding="4">
+                            <ItemsControl x:Name="PART_MenuItems" ItemsSource="{TemplateBinding MenuItems}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Button Content="{Binding Title, FallbackValue='No Content'}"
+                                                Command="{Binding Command}"
+                                                HorizontalAlignment="Stretch"
+                                                Padding="0"
+                                                Background="#00000000"
+                                                Foreground="White"/>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </Border>
+                    </Popup>
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+</Styles>
