@@ -1,4 +1,3 @@
-using System;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
@@ -49,7 +48,7 @@ public partial class KebabMenu : TemplatedControl
     public KebabMenu()
     {
         // Initialize with empty collection
-        MenuItems = new ObservableCollection<KebabMenuItem>();
+        MenuItems = [];
     }
 
     protected override void OnApplyTemplate(TemplateAppliedEventArgs e)

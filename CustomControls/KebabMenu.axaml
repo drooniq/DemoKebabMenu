@@ -17,10 +17,10 @@
                             Background="#66000000"
                             CornerRadius="{TemplateBinding CornerRadius}">
                         <TextBlock Text="⋮"
-                                  FontSize="{Binding Size, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource SizeToFontSizeConverter}}"
-                                  HorizontalAlignment="Center"
-                                  VerticalAlignment="Center"
-                                  Foreground="White"/>
+                                   FontSize="{Binding Size, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource SizeToFontSizeConverter}}"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Foreground="White"/>
                     </Button>
 
                     <Popup x:Name="PART_Popup"
@@ -35,6 +35,7 @@
                                     <DataTemplate>
                                         <Button Content="{Binding Title, FallbackValue='No Content'}"
                                                 Command="{Binding Command}"
+                                                CommandParameter="{Binding Parameter}"
                                                 HorizontalAlignment="Stretch"
                                                 Padding="0"
                                                 Background="#00000000"

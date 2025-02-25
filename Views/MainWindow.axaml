@@ -17,7 +17,7 @@
     </Design.DataContext>
 
     <StackPanel Background="DeepPink" Width="200" Height="100">
-        <local:KebabMenu Size="30" CornerRadius="15" MenuItems="{Binding KebabItems }"/>
-        <local:KebabMenu Size="60" CornerRadius="30" MenuItems="{Binding KebabItems2 }"/>
+        <local:KebabMenu Size="60" CornerRadius="30" MenuItems="{Binding KebabItems }"/>
+        <local:KebabMenu Size="24" CornerRadius="12" MenuItems="{Binding KebabItems2 }"/>
     </StackPanel>
 </Window>

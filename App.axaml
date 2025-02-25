@@ -12,5 +12,10 @@
     <Application.Styles>
         <FluentTheme />
         <StyleInclude Source="/CustomControls/KebabMenu.axaml"/>
+        <StyleInclude Source="/CustomControls/PopupMessage.axaml"/>
+        <Style Selector="Window">
+            <Setter Property="ExtendClientAreaToDecorationsHint" Value="True"/>
+            <Setter Property="TransparencyBackgroundFallback" Value="Gray"/>
+        </Style>        
     </Application.Styles>
 </Application>
